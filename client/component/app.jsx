@@ -11,23 +11,21 @@ class App extends React.Component {
     this.grabData = this.grabData.bind(this);
   }
 
-
   componentDidMount() {
     this.grabData()
   }
 
   grabData() {
-    self = this;
     let id = window.location.pathname.slice(8);
     id = parseInt(id.substring(0, id.length))
     axios.get(`/house/${id}`)
-      .then(function (response) {
+      .then( response => {
         console.log('data in client', response.data);
-        self.setState({
+        this.setState({
           info: response.data
         });
       })
-      .catch(function (error) {
+      .catch( error => {
         console.log(error);
     })
   }
