@@ -60,7 +60,12 @@ const insertData = () => {
 	});
 }
 
+const findOne = (id, callback) => {
+  House.findOne({id: id}).exec(callback);
+}
+
 module.exports.insertData = insertData;
+module.exports.findOne = findOne;
 
 
 
