@@ -41,7 +41,7 @@ class App extends React.Component {
   	return (
       <div>
         <div>{this.state.info.home_name}</div>
-        <Highlights props={this.state.info}/>
+        <Highlights info={this.state.info} />
       </div>
   	);
   }
