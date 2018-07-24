@@ -1,0 +1,31 @@
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  margin-bottom: 18px;
+}
+
+.icon {
+  font-size: 16px;
+  font-weight: 100;
+  margin-bottom: 12px;  
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 300px 200px;
+  grid-template-rows: 40px 40px 40px;
+}
+
+.showAll {
+  color: #008489;
+  cursor: pointer;
+  margin-bottom: 25px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.showAll:hover {
+  text-decoration: underline;
+}

@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import styles from './amenities.css';
+
+console.log('styles object', styles);
 
 const Amenities = (props) => (
   <div>
-  	<div className='amenities-title'>Amenities</div>
-  	<div className='wrapper'>
+  	<div className={styles.title}>Amenities</div>
+  	<div className={styles.wrapper}>
   	{props.info.amenities !== undefined ? props.info.amenities.map( item => 
-      <div className='amenities-icon' style={{marginBottom: '12px'}}>
+      <div className={styles.icon}>
   		  <img src={item.url} />
   		  <span> {item.A}</span>
   		</div>) : null}
   	</div>
-  	<div className='description-end' onClick={props.togglePopup}>Show all 15 amenities</div>
+  	<div className={styles.showAll} onClick={props.togglePopup}>Show all 15 amenities</div>
   </div>
 );
 
