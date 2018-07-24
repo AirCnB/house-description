@@ -4,6 +4,8 @@ import axios from 'axios';
 import DescriptionTitle from './description-title.jsx';
 import Highlights from './highlights.jsx';
 import DescriptionBody from './description-body.jsx';
+import Amenities from './amenities.jsx';
+
 
 
 class App extends React.Component {
@@ -11,14 +13,23 @@ class App extends React.Component {
   	super(props);
     this.state = {
       info: {},
+      modal: false,
       showDescription: false
     }
     this.grabData = this.grabData.bind(this);
+    this.togglePopup = this.togglePopup.bind(this);
+    this.handleInfo = this.handleInfo.bind(this);
     this.toggleDescription = this.toggleDescription.bind(this);
   }
 
   componentDidMount() {
-    this.grabData()
+    this.grabData();
+  }
+
+  handleInfo(results) {
+    this.setState({
+      info: results
+    })
   }
 
   grabData() {
@@ -27,14 +38,13 @@ class App extends React.Component {
     axios.get(`/house/${id}`)
       .then( response => {
         console.log('data in client', response.data);
-        this.setState({
-          info: response.data
-        });
+        this.handleInfo(response.data);
       })
       .catch( error => {
         console.log(error);
     })
   }
+
 
   toggleDescription() {
     this.setState({
@@ -42,11 +52,22 @@ class App extends React.Component {
     })
   }
 
+  togglePopup() {
+    this.setState({
+      modal: !this.state.modal
+    })
+  }
+
+
+
+
   render() {
   	return (
       <div className='main-app'>
         <DescriptionTitle info={this.state.info} />
         <DescriptionBody info={this.state.info} toggleDescription={this.toggleDescription} show={this.state.showDescription} />
+        <Highlights info={this.state.info} />
+        <Amenities info={this.state.info} togglePopup={this.togglePopup} modal={this.state.modal} />
       </div>
   	);
   }
