@@ -2,19 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Highlights from './highlights.jsx';
+import Amenities from './amenities.jsx';
 
 
 class App extends React.Component {
   constructor(props) {
   	super(props);
     this.state = {
-      info: {}
+      info: {},
+      modal: false
     }
     this.grabData = this.grabData.bind(this);
+    this.togglePopup = this.togglePopup.bind(this);
+    this.handleInfo = this.handleInfo.bind(this);
   }
 
   componentDidMount() {
-    this.grabData()
+    this.grabData();
+  }
+
+  handleInfo(results) {
+    this.setState({
+      info: results
+    })
   }
 
   grabData() {
@@ -23,12 +33,16 @@ class App extends React.Component {
     axios.get(`/house/${id}`)
       .then( response => {
         console.log('data in client', response.data);
-        this.setState({
-          info: response.data
-        });
+        this.handleInfo(response.data);
       })
       .catch( error => {
         console.log(error);
+    })
+  }
+
+  togglePopup() {
+    this.setState({
+      modal: !this.state.modal
     })
   }
 
@@ -39,9 +53,10 @@ class App extends React.Component {
 
   render() {
   	return (
-      <div>
+      <div className='main-app'>
         <div>{this.state.info.home_name}</div>
         <Highlights info={this.state.info} />
+        <Amenities info={this.state.info} togglePopup={this.togglePopup} modal={this.state.modal} />
       </div>
   	);
   }
