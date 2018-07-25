@@ -1,0 +1,50 @@
+.container {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #767676;
+  border: 1px solid #DBDBDB;
+  border-radius: 4px;
+  padding: 24px;
+  width: 570px;
+  color: #484848;
+}
+
+.title {
+  font-size: 12px;
+  color: #767676;
+  font-weight: 600;
+}
+
+.spacing {
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-weight: 200;
+}
+
+.thumbsup {
+  width: 16px;
+  height: 16px;
+}
+
+.helpful {
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 18px;
+  color: #767676;
+}
+
+.helpful:hover {
+  color: #008489 !important;
+  cursor: pointer;
+}
+
+.feedback {
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 18px;
+  color: #767676;
+}
