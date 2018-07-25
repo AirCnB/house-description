@@ -28,21 +28,22 @@ const houseSchema = mongoose.Schema({
   highlight3: String,
   image: String,
   description: String,
-  aHeaders: [String],
+  // aHeaders: [String],
   amenities: [{
   	A: String,
   	url: String
   }],
-  a_basics: [],
-  a_facilities: [],
-  a_1: [],
-  a_2: [],
-  a_3: [],
-  a_4: [],
-  a_noincl: String,
+  amenities_basics: [],
+  amenities_info: [[String]],
+  // a_facilities: [],
+  // a_1: [],
+  // a_2: [],
+  // a_3: [],
+  // a_4: [],
+  not_included: [],
   rules: [],
   rules2: String,
-  sleep: []
+  sleep_arrangement: []
 })
 
 // houseSchema.plugin(autoIncrement.plugin, { model: 'House', field: 'id' });
