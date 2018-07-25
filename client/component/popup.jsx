@@ -2,30 +2,35 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './popup.css';
 
-class Popup extends React.Component {
-  constructor(props) {
-  	super(props);
-  }
-
-
-
-
-
-
-
-
-  render() {
-  	return (
-  		<div>
-        <div className={styles.modal}>
-          <div>This is a modal</div>
-          <div>This is another line of the modal</div>
-        </div>
-        <div className={styles.backdrop} onClick={this.props.togglePopup}/>
+const Popup = (props) => (  
+  <div>
+    <div className={styles.modal}>
+      <div>
+        <h1 className={styles.title}>Amenities</h1>
+        <div className={styles.header}>Basic</div>
+        {props.info.amenities_basics.map( item => <div className={styles.detail}>{item}</div>)}
       </div>
-  	)
-  }
-}
+      <div>
+      {props.info.amenities_info.map( section => {
+        return section.map( (detail, index) => {
+          if (index === 0) {
+          	return <div className={styles.header}>{detail}</div>
+          } else {
+          	return <div className={styles.detail}>{detail}</div>
+          }
+        }) 
+      })}
+      </div>
+      <div>
+        <div className={styles.header}>Not included</div>
+        {props.info.not_included[0].split(' ').map( detail => <div className={styles.dashed}>{detail}</div>)}
+      </div>
+    </div>
+    <div className={styles.backdrop} onClick={props.togglePopup}/>
+  </div>
+);
+  
+
 
 
 
