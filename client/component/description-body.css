@@ -19,6 +19,12 @@
   text-decoration: underline;
 }
 
+.contact {
+  composes: showMore;
+  padding-bottom: 28px;
+  border-bottom: thin solid #DBDBDB;
+}
+
 .infoPanel {
   width: 566px;
   margin-top: 10px;

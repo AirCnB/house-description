@@ -70,8 +70,8 @@ class App extends React.Component {
   	return (
       <div className='main-app'>
         <DescriptionTitle info={this.state.info} />
-        <DescriptionBody info={this.state.info} toggleDescription={this.toggleDescription} show={this.state.showDescription} />
         <Highlights info={this.state.info} />
+        <DescriptionBody info={this.state.info} toggleDescription={this.toggleDescription} show={this.state.showDescription} />
         <Amenities info={this.state.info} togglePopup={this.togglePopup} modal={this.state.modal} />
       </div>
   	);

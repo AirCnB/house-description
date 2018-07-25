@@ -14,7 +14,7 @@ const DescriptionBody = (props) => (
       <div className={styles.showMore} onClick={props.toggleDescription}>
         {props.description ? 'Hide': 'Read more about the space'}
       </div>
-      <div className={styles.showMore}>Contact host</div>
+      <div className={styles.contact}>Contact host</div>
     </div>
   </div>
 );
