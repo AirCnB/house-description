@@ -1,3 +1,14 @@
+.main {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  color: #484848;
+}
+
+.image {
+  vertical-align: top;
+  border-right: 5px solid transparent;
+  width: 18px;
+  height: 15px;
+}
 
 .title {
   font-size: 16px;

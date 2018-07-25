@@ -13,16 +13,18 @@
 
 .modal {
   position: absolute;
-  top: 165%;
+  top: 245%;
   left: 50%;
-  bottom: 100%;
+  margin-bottom: 50px;
   transform: translate(-50%, -50%);
   width: 500px;
+  max-width: 100%;
   max-height: 3000px;
   z-index: 9999;
   background: white;
   border: thin solid #DBDBDB;
   padding: 32px;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), 2px 3px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .title {
@@ -34,18 +36,22 @@
 .header {
   font-size: 18px;
   font-weight: 400;
-  padding-bottom: 24px;
+  padding-top: 24px;
+  padding-bottom: 18px;
 }
 
 .detail {
   font-size: 16px;
   font-weight: 200;
+  padding-top: 24px;
   padding-bottom: 24px;
+  border-bottom: thin solid #DBDBDB;
 }
 
 .dashed {
   composes: detail;
   text-decoration: line-through;
+  color: #767676;
 }
 
 
