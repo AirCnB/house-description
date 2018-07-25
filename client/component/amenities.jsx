@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Popup from './popup.jsx';
 import styles from './amenities.css';
-
-console.log('styles object', styles);
 
 const Amenities = (props) => (
   <div>
@@ -15,6 +14,7 @@ const Amenities = (props) => (
   		</div>) : null}
   	</div>
   	<div className={styles.showAll} onClick={props.togglePopup}>Show all 15 amenities</div>
+  	{props.modal ? <Popup info={props.info} togglePopup={props.togglePopup}/> : null}
   </div>
 );
 
