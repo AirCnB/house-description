@@ -56,6 +56,13 @@ class App extends React.Component {
     this.setState({
       modal: !this.state.modal
     })
+    // if (this.state.modal === false) {
+    //   document.documentElement.style.overflow = 'hidden';
+    //   document.body.scroll = 'no'
+    // } else {
+    //   document.documentElement.style.overflow = 'scroll';
+    //   document.body.scroll = 'yes';
+    // }
   }
 
 
