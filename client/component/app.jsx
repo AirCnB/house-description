@@ -8,9 +8,11 @@ class App extends React.Component {
   constructor(props) {
   	super(props);
     this.state = {
-      info: {}
+      info: {},
+      description: false
     }
     this.grabData = this.grabData.bind(this);
+    this.toggleDescription = this.toggleDescription.bind(this);
   }
 
   componentDidMount() {
@@ -32,16 +34,15 @@ class App extends React.Component {
     })
   }
 
-
-
-
-
+  toggleDescription() {
+    this.setState({
+      description: !this.state.description
+    })
+  }
 
   render() {
+   
   	return (
-      <div>
-        <div>{this.state.info.home_name}</div>
-        <Highlights info={this.state.info} />
       </div>
   	);
   }

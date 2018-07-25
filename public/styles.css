@@ -1,43 +1,109 @@
-
-
-/*HIGHLIGHTS*/
-.highlight-container {
+/*/*MAIN APP*/
+/*.main-app {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: #767676;
-  border: 1px solid #DBDBDB;
-  border-radius: 4px;
-  padding: 24px;
   color: #484848;
 }
 
-small {
-  font-size: 12px;
-  color: #767676;
+img {
+  vertical-align: top;
+  border-right: 5px solid transparent;
+}
+
+.info-panel {
+  width: 566px;
+  margin-top: 10px;
+  max-height: 0px;
+  overflow: hidden;
+  opacity: 0.0;
+  transition: max-height 1s ease, opacity 0.5s ease;
+}
+
+.info-panel.visible{
+  max-height: 1000px;
+  opacity: 1.0;
+}
+
+h1 {
+  margin: 0px;
   font-weight: 600;
+  display: inline-block;
 }
 
-.highlight-d {
-  font-weight: 200;
-}
-
-.thumbsup {
-  width: 16px;
-  height: 16px;
-}
-
-.helpful {
+.host-info {
+  text-align: center;
   font-size: 14px;
   font-weight: 200;
-  line-height: 18px;
   color: #767676;
+  display: inline-block;
+  position: absolute;
+  width: 16%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
-.helpful:hover {
-  color: #008489 !important;
-  cursor: pointer;
+.home-type {
+  font-size: 12px;
+  font-weight: 500;
+  color: #03150d;;
 }
+
+.city {
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.description-icons {
+  font-size: 14px;
+  font-weight: 100;
+  margin-top: 20px;
+  margin-bottom: 28px;
+}
+
+.icon-pair {
+  border-left: 18px solid transparent;
+}
+
+.description-body {
+  width: 566px;
+  font-size: 16px;
+  font-weight: 200;
+  color: #484848;
+  box-sizing: border-box;
+}
+
+.description-end {
+  color: #008489;
+  cursor: pointer;
+  margin-bottom: 25px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.description-end:hover {
+  text-decoration: underline;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

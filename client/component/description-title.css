@@ -1,0 +1,61 @@
+.main {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  color: #484848;
+}
+
+.title {
+  margin: 0px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.type {
+  font-size: 12px;
+  font-weight: 500;
+  color: #03150d;;
+}
+
+.hostInfo {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 200;
+  color: #767676;
+  display: inline-block;
+  position: absolute;
+  width: 16%;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.icon {
+  vertical-align: top;
+  border-right: 5px solid transparent;
+}
+
+.avatar {
+  composes: icon;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+}
+
+.city {
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 100;
+  margin-top: 20px;
+  margin-bottom: 28px;
+}
+
+.iconLabel {
+  border-left: 18px solid transparent;
+}
+
+
+
+
+
