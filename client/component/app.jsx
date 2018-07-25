@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import DescriptionTitle from './description-title.jsx';
 import Highlights from './highlights.jsx';
+import DescriptionBody from './description-body.jsx';
 
 
 class App extends React.Component {
@@ -9,7 +11,7 @@ class App extends React.Component {
   	super(props);
     this.state = {
       info: {},
-      description: false
+      showDescription: false
     }
     this.grabData = this.grabData.bind(this);
     this.toggleDescription = this.toggleDescription.bind(this);
@@ -36,13 +38,15 @@ class App extends React.Component {
 
   toggleDescription() {
     this.setState({
-      description: !this.state.description
+      showDescription: !this.state.showDescription
     })
   }
 
   render() {
-   
   	return (
+      <div className='main-app'>
+        <DescriptionTitle info={this.state.info} />
+        <DescriptionBody info={this.state.info} toggleDescription={this.toggleDescription} show={this.state.showDescription} />
       </div>
   	);
   }

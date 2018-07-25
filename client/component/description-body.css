@@ -1,0 +1,39 @@
+.main {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  width: 566px;
+  font-size: 16px;
+  font-weight: 200;
+  color: #484848;
+  box-sizing: border-box;
+}
+
+.showMore {
+  color: #008489;
+  cursor: pointer;
+  margin-bottom: 25px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.showMore:hover {
+  text-decoration: underline;
+}
+
+.infoPanel {
+  width: 566px;
+  margin-top: 10px;
+  max-height: 0px;
+  overflow: hidden;
+  opacity: 0.0;
+  transition: max-height 1.5s ease, opacity 0.5s ease;
+}
+
+.visible{
+  width: 566px;
+  margin-top: 10px;
+  max-height: 0px;
+  overflow: hidden;
+  max-height: 1000px;
+  opacity: 1.0;
+  transition: max-height 1.5s ease, opacity 0.5s ease;
+}
