@@ -7,7 +7,6 @@ import DescriptionBody from './description-body.jsx';
 import Amenities from './amenities.jsx';
 
 
-
 class App extends React.Component {
   constructor(props) {
   	super(props);
@@ -43,6 +42,19 @@ class App extends React.Component {
       .catch( error => {
         console.log(error);
     })
+  }
+
+  togglePopup() {
+    this.setState({
+      modal: !this.state.modal
+    })
+    // if (this.state.modal === false) {
+    //   document.documentElement.style.overflow = 'hidden';
+    //   document.body.scroll = 'no'
+    // } else {
+    //   document.documentElement.style.overflow = 'scroll';
+    //   document.body.scroll = 'yes';
+    // }
   }
 
 

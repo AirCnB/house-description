@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import styles from './popup.css';
 
 const Popup = (props) => (  
-  <div>
+  <div className={styles.main}>
     <div className={styles.modal}>
+      <button type='button' className={styles.close} onClick={props.togglePopup}>X</button>
       <div>
         <h1 className={styles.title}>Amenities</h1>
         <div className={styles.header}>Basic</div>
