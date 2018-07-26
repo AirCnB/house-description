@@ -1,0 +1,38 @@
+.main {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  color: #484848;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  margin-bottom: 18px;
+  border-top: thin solid #DBDBDB;
+  width: 566px;
+  padding-top: 28px;
+}
+
+.policy {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.refund {
+  font-size: 16px;
+  font-weight: 200;
+  margin-bottom: 12px;
+}
+
+.readMore {
+  color: #008489;
+  cursor: pointer;
+  margin-bottom: 25px;
+  padding-top: 12px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.readMore:hover {
+  text-decoration: underline;
+}
