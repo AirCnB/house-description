@@ -1,0 +1,66 @@
+.main {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  color: #484848;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  margin-bottom: 18px;
+  border-top: thin solid #DBDBDB;
+  width: 566px;
+  padding-top: 28px;
+}
+
+
+.rule {
+  font-size: 16px;
+  font-weight: 100;
+  margin-bottom: 12px; 
+}
+
+.moreRules {
+  width: 566px;
+  font-size: 16px;
+  font-weight: 200;
+  box-sizing: border-box;
+}
+
+.showMore {
+  color: #008489;
+  cursor: pointer;
+  margin-bottom: 25px;
+  padding-top: 12px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.showMore:hover {
+  text-decoration: underline;
+}
+
+.border {
+  width: 50px;
+  border-bottom: thin solid #DBDBDB;
+  padding-top: 15px;
+}
+
+.infoPanel {
+  width: 566px;
+  margin-top: 10px;
+  max-height: 0px;
+  overflow: hidden;
+  opacity: 0.0;
+  transition: max-height 1.5s ease, opacity 0.5s ease;
+}
+
+.visible {
+  composes: moreRules;
+  margin-top: 25px;
+  max-height: 0px;
+  overflow: hidden;
+  max-height: 1000px;
+  opacity: 1.0;
+  transition: max-height 1.5s ease, opacity 0.5s ease;
+}
