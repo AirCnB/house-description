@@ -1,0 +1,69 @@
+.main {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  color: #484848;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  margin-bottom: 18px;
+  border-top: thin solid #DBDBDB;
+  width: 566px;
+  padding-top: 28px;
+}
+
+.policy {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.refund {
+  font-size: 16px;
+  font-weight: 200;
+  margin-bottom: 12px;
+}
+
+.readMore {
+  color: #008489;
+  cursor: pointer;
+  margin-bottom: 25px;
+  padding-top: 12px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.readMore:hover {
+  text-decoration: underline;
+}
+
+.getDetails {
+  composes: readMore;
+  margin-bottom: 15px;
+}
+
+.list {
+  margin-bottom: 10px;
+}
+
+.hidden {
+  width: 566px;
+  margin-top: 10px;
+  max-height: 0px;
+  overflow: hidden;
+  opacity: 0.0;
+  transition: max-height 1.5s ease, opacity 0.5s ease;
+}
+
+.visible {
+  width: 620px;
+  font-size: 16px;
+  font-weight: 200;
+  box-sizing: border-box;
+  margin-top: 18px;
+  max-height: 0px;
+  overflow: hidden;
+  max-height: 1000px;
+  opacity: 1.0;
+  transition: max-height 1.5s ease, opacity 0.5s ease;
+}
