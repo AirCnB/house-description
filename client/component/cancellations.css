@@ -37,6 +37,11 @@
   text-decoration: underline;
 }
 
+.getDetails {
+  composes: readMore;
+  margin-bottom: 15px;
+}
+
 .list {
   margin-bottom: 10px;
 }
