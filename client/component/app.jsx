@@ -5,6 +5,7 @@ import DescriptionTitle from './description-title.jsx';
 import Highlights from './highlights.jsx';
 import DescriptionBody from './description-body.jsx';
 import Amenities from './amenities.jsx';
+import Rules from './rules.jsx';
 
 
 class App extends React.Component {
@@ -13,12 +14,14 @@ class App extends React.Component {
     this.state = {
       info: {},
       modal: false,
-      showDescription: false
+      showDescription: false,
+      showRules: false
     }
     this.grabData = this.grabData.bind(this);
     this.togglePopup = this.togglePopup.bind(this);
     this.handleInfo = this.handleInfo.bind(this);
     this.toggleDescription = this.toggleDescription.bind(this);
+    this.toggleRules = this.toggleRules.bind(this);
   }
 
   componentDidMount() {
@@ -64,6 +67,12 @@ class App extends React.Component {
     })
   }
 
+  toggleRules() {
+    this.setState({
+      showRules: !this.state.showRules
+    })
+  }
+
 
 
   render() {
@@ -73,6 +82,7 @@ class App extends React.Component {
         <Highlights info={this.state.info} />
         <DescriptionBody info={this.state.info} toggleDescription={this.toggleDescription} show={this.state.showDescription} />
         <Amenities info={this.state.info} togglePopup={this.togglePopup} modal={this.state.modal} />
+        <Rules info={this.state.info} toggleRules={this.toggleRules} showRules={this.state.showRules} />
       </div>
   	);
   }
