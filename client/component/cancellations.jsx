@@ -14,7 +14,7 @@ const Cancellations = (props) => (
       </ul>
       <div className={styles.getDetails}>Get details</div>
     </div>
-    <div className={styles.readMore} onClick={props.toggleCancellation}>Read more about the policy</div>
+    <div className={styles.readMore} onClick={props.toggleCancellation}>{props.showCancellation? 'Hide policies' : 'Read more about the policy'}</div>
   </div>
 );
 
