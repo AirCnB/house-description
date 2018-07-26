@@ -7,6 +7,7 @@ import DescriptionBody from './description-body.jsx';
 import Amenities from './amenities.jsx';
 import SleepingArrangements from './sleeping-arrangements.jsx';
 import Rules from './rules.jsx';
+import Cancellations from './cancellations.jsx';
 
 
 class App extends React.Component {
@@ -16,13 +17,15 @@ class App extends React.Component {
       info: {},
       modal: false,
       showDescription: false,
-      showRules: false
+      showRules: false,
+      showCancellation: false
     }
     this.grabData = this.grabData.bind(this);
     this.togglePopup = this.togglePopup.bind(this);
     this.handleInfo = this.handleInfo.bind(this);
     this.toggleDescription = this.toggleDescription.bind(this);
     this.toggleRules = this.toggleRules.bind(this);
+    this.toggleCancellation = this.toggleCancellation.bind(this);
   }
 
   componentDidMount() {
@@ -74,6 +77,12 @@ class App extends React.Component {
     })
   }
 
+  toggleCancellation() {
+    this.setState({
+      showCancellation: !this.state.showCancellation
+    })
+  }
+
 
 
   render() {
@@ -85,6 +94,7 @@ class App extends React.Component {
         <Amenities info={this.state.info} togglePopup={this.togglePopup} modal={this.state.modal} />
         <SleepingArrangements info={this.state.info} />
         <Rules info={this.state.info} toggleRules={this.toggleRules} showRules={this.state.showRules} />
+        <Cancellations toggleCancellation={this.toggleCancellation} showCancellation={this.state.showCancellation} />
       </div>
   	);
   }
