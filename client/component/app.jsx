@@ -6,6 +6,7 @@ import Highlights from './highlights.jsx';
 import DescriptionBody from './description-body.jsx';
 import Amenities from './amenities.jsx';
 import Rules from './rules.jsx';
+import Cancellations from './cancellations.jsx';
 
 
 class App extends React.Component {
