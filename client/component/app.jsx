@@ -5,6 +5,7 @@ import DescriptionTitle from './description-title.jsx';
 import Highlights from './highlights.jsx';
 import DescriptionBody from './description-body.jsx';
 import Amenities from './amenities.jsx';
+import SleepingArrangements from './sleeping-arrangements.jsx';
 import Rules from './rules.jsx';
 
 
@@ -82,6 +83,7 @@ class App extends React.Component {
         <Highlights info={this.state.info} />
         <DescriptionBody info={this.state.info} toggleDescription={this.toggleDescription} show={this.state.showDescription} />
         <Amenities info={this.state.info} togglePopup={this.togglePopup} modal={this.state.modal} />
+        <SleepingArrangements info={this.state.info} />
         <Rules info={this.state.info} toggleRules={this.toggleRules} showRules={this.state.showRules} />
       </div>
   	);
