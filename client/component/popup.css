@@ -4,7 +4,7 @@
 }
 
 .backdrop {
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -14,9 +14,9 @@
   opacity: 0.7;
   }
 
-.modal {
+/*.modal {
   position: absolute;
-  top: 210%;
+  top: 250%;
   left: 50%;
   margin-bottom: 50px;
   transform: translate(-50%, -50%);
@@ -28,6 +28,25 @@
   border: thin solid #DBDBDB;
   padding: 32px;
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), 2px 3px 10px 0 rgba(0, 0, 0, 0.1);
+  overflow: auto;
+}*/
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 100px;
+  margin-top: 50px;
+  width: 500px;
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 9999;
+  background: white;
+  border: thin solid #DBDBDB;
+  padding: 32px;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), 2px 3px 10px 0 rgba(0, 0, 0, 0.1);
+  overflow: auto !important;
 }
 
 .title {

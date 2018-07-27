@@ -7,14 +7,14 @@ const Amenities = (props) => (
   <div className={styles.main}>
   	<div className={styles.title}>Amenities</div>
   	<div className={styles.wrapper}>
-  	{props.info.amenities !== undefined ? props.info.amenities.map( item => 
+  	{props.info.amenities !== undefined && props.info.amenities.map( item => 
       <div className={styles.icon}>
   		  <img className={styles.image} src={item.url} />
   		  <span> {item.A}</span>
-  		</div>) : null}
+  		</div>)}
   	</div>
   	<div className={styles.showAll} onClick={props.togglePopup}>Show all 15 amenities</div>
-  	{props.modal ? <Popup info={props.info} togglePopup={props.togglePopup}/> : null}
+  	{props.modal && <Popup info={props.info} togglePopup={props.togglePopup}/>}
   </div>
 );
 

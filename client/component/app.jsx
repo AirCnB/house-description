@@ -55,13 +55,11 @@ class App extends React.Component {
     this.setState({
       modal: !this.state.modal
     })
-    // if (this.state.modal === false) {
-    //   document.documentElement.style.overflow = 'hidden';
-    //   document.body.scroll = 'no'
-    // } else {
-    //   document.documentElement.style.overflow = 'scroll';
-    //   document.body.scroll = 'yes';
-    // }
+    if (this.state.modal === false) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'scroll';
+    }
   }
 
 
@@ -86,15 +84,16 @@ class App extends React.Component {
 
 
   render() {
+    const { info, modal, showRules, showDescription, showCancellation } = this.state;
   	return (
       <div className='main-app'>
-        <DescriptionTitle info={this.state.info} />
-        <Highlights info={this.state.info} />
-        <DescriptionBody info={this.state.info} toggleDescription={this.toggleDescription} show={this.state.showDescription} />
-        <Amenities info={this.state.info} togglePopup={this.togglePopup} modal={this.state.modal} />
-        <SleepingArrangements info={this.state.info} />
-        <Rules info={this.state.info} toggleRules={this.toggleRules} showRules={this.state.showRules} />
-        <Cancellations toggleCancellation={this.toggleCancellation} showCancellation={this.state.showCancellation} />
+        <DescriptionTitle info={info} />
+        <Highlights info={info} />
+        <DescriptionBody info={info} toggleDescription={this.toggleDescription} show={showDescription} />
+        <Amenities info={info} togglePopup={this.togglePopup} modal={modal} />
+        <SleepingArrangements info={info} />
+        <Rules info={info} toggleRules={this.toggleRules} showRules={this.state.showRules} />
+        <Cancellations toggleCancellation={this.toggleCancellation} showCancellation={showCancellation} />
       </div>
   	);
   }
