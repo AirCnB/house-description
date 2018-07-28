@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import DescriptionTitle from './description-title.jsx';
 import Highlights from './highlights.jsx';
@@ -100,4 +99,4 @@ class App extends React.Component {
 }
 
 
-ReactDOM.render(<App />, document.getElementById('app'));
+export default App;

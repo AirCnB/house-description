@@ -8,11 +8,12 @@ const DescriptionBody = (props) => (
       <div style={{marginBottom: '15px'}}>{props.info.description !== undefined ? 
         props.info.description.substring(0, Math.floor(props.info.description.length / 2)) : ''}
       </div>
-      <div className={props.show ? styles.visible : styles.infoPanel} style={{marginBottom: '15px'}}>{props.info.description !== undefined ? 
+      <div id='description' className={props.show ? styles.visible : styles.infoPanel} style={{marginBottom: '15px'}}>{props.info.description !== undefined ? 
         props.info.description.substring(Math.floor(props.info.description.length / 2)) : ''}
       </div>
       <div className={styles.showMore} onClick={props.toggleDescription}>
-        {props.description ? 'Hide': 'Read more about the space'}
+        {props.show ? 'Hide' : 'Read more about the space'}
+        <span> &#8964;</span>
       </div>
       <div className={styles.contact}>Contact host</div>
     </div>
