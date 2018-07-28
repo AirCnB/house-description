@@ -19,6 +19,12 @@ const MockFn = jest.fn();
 const wrapper1 = shallow(<DescriptionBody info={props} toggleDescription={MockFn} />);
 const wrapper2 = shallow(<DescriptionTitle info={props} />);
 
+describe('DescriptionTitle', () => {
+  it('component renders properly', () => {
+    wrapper2.exists();
+  });
+});
+
 describe('DescriptionBody', () => {
   it('component renders properly', () => {
     wrapper1.exists();

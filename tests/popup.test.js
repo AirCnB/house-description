@@ -21,4 +21,8 @@ describe('Popup', () => {
   	wrapper.find('.backdrop').simulate('click');
   	expect(mockFn).toHaveBeenCalled();
   })
+  it('renders all headers within modal', () => {
+    const div = wrapper.find('.header');
+    expect(div).toHaveLength(props.amenities_info.length + 2);
+  });
 });
