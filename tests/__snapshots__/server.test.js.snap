@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders main App 1`] = `
+<div
+  className="main-app"
+>
+  <DescriptionTitle
+    info={Object {}}
+  />
+  <Highlights
+    info={Object {}}
+  />
+  <DescriptionBody
+    info={Object {}}
+    show={false}
+    toggleDescription={[Function]}
+  />
+  <Amenities
+    info={Object {}}
+    modal={false}
+    togglePopup={[Function]}
+  />
+  <SleepingArrangements
+    info={Object {}}
+  />
+  <Rules
+    info={Object {}}
+    showRules={false}
+    toggleRules={[Function]}
+  />
+  <Cancellations
+    showCancellation={false}
+    toggleCancellation={[Function]}
+  />
+</div>
+`;
