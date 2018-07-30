@@ -18,21 +18,4 @@ const Amenities = (props) => (
   </div>
 );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export default Amenities;

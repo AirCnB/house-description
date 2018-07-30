@@ -12,15 +12,4 @@ const Rules = (props) => (
 
 );
 
-
-
-
-
-
-
-
-
-
-
-
 export default Rules; 

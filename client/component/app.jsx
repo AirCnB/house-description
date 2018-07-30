@@ -41,9 +41,9 @@ class App extends React.Component {
     let id = window.location.pathname.slice(8);
     id = parseInt(id.substring(0, id.length))
     axios.get(`/house/${id}`)
-      .then( response => {
-        console.log('data in client', response.data);
-        this.handleInfo(response.data);
+      .then( ({ data }) => {
+        console.log('data in client', data);
+        this.handleInfo(data);
       })
       .catch( error => {
         console.log(error);
@@ -51,9 +51,9 @@ class App extends React.Component {
   }
 
   togglePopup() {
-    this.setState({
-      modal: !this.state.modal
-    })
+    this.setState( ({ modal }) => ({
+      modal: !modal
+    }));
     if (this.state.modal === false) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -63,21 +63,21 @@ class App extends React.Component {
 
 
   toggleDescription() {
-    this.setState({
-      showDescription: !this.state.showDescription
-    })
+    this.setState( ({ showDescription }) => ({
+      showDescription: !showDescription
+    }));
   }
 
   toggleRules() {
-    this.setState({
-      showRules: !this.state.showRules
-    })
+    this.setState( ({ showRules }) => ({
+      showRules: !showRules
+    }));
   }
 
   toggleCancellation() {
-    this.setState({
-      showCancellation: !this.state.showCancellation
-    })
+    this.setState( ({ showCancellation }) => ({
+      showCancellation: !showCancellation
+    }));
   }
 
 

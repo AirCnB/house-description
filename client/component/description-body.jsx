@@ -20,8 +20,4 @@ const DescriptionBody = (props) => (
   </div>
 );
 
-
-
-
-
 export default DescriptionBody;

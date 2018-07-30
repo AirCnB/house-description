@@ -16,5 +16,4 @@ const SleepingArrangements = (props) => (
   </div>
 );
 
-
 export default SleepingArrangements;

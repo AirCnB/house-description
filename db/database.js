@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
-// const autoIncrement = require('mongoose-auto-increment');
 mongoose.connect('mongodb://localhost/aircnb');
 const data = require('../dataGeneration.js');
-
 const db = mongoose.connection;
-// autoIncrement.initialize(db);
-
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {

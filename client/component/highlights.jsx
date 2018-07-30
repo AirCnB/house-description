@@ -92,6 +92,4 @@ class Highlights extends React.Component {
   }
 }
 
-
-
 export default Highlights;

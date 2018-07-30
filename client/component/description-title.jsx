@@ -34,5 +34,4 @@ const DescriptionTitle = (props) => (
   </div>
 );
 
-
 export default DescriptionTitle;
