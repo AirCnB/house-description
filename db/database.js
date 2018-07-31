@@ -57,9 +57,8 @@ const insertData = () => {
 	});
 }
 
-const findOne = (id, callback) => {
-  House.findOne({id: id}).exec(callback);
-}
+const findOne = id => House.findOne({ id });
+
 
 module.exports.insertData = insertData;
 module.exports.findOne = findOne;

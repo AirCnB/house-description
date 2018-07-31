@@ -14,3 +14,9 @@ test('should respond with json object', () => {
     expect(response.type).toBe('application/json')
   });
 });
+
+test('pull correct object id from database', () => {
+  return request(app).get('/house/1').then( response => {
+    expect(response.body.id).toEqual(1);
+  });
+});

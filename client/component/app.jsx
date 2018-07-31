@@ -38,9 +38,9 @@ class App extends React.Component {
   }
 
   grabData() {
-    let id = window.location.pathname.slice(8);
+    let id = window.location.pathname.slice(10);
     id = parseInt(id.substring(0, id.length))
-    axios.get(`/house/${id}`)
+    axios.get(`/api/house/${id}`)
       .then( ({ data }) => {
         console.log('data in client', data);
         this.handleInfo(data);
