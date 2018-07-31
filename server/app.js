@@ -7,7 +7,7 @@ const db = require('../db/database.js');
 
 app.use('/listings/:id', express.static('public'));
 
-// db.insertData();
+// db.readTSV();
 
 app.get('/api/house/:id', (req, res) => {
   let data = req.params;
@@ -18,4 +18,5 @@ app.get('/api/house/:id', (req, res) => {
 });
 
 module.exports = app;
+
 

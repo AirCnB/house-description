@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/aircnb');
-const data = require('../dataGeneration.js');
+const dataGen = require('../dataGeneration.js');
 const db = mongoose.connection;
+const fs = require('fs');
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
@@ -42,26 +43,48 @@ const houseSchema = mongoose.Schema({
   sleep_arrangement: []
 })
 
-// houseSchema.plugin(autoIncrement.plugin, { model: 'House', field: 'id' });
 const House = mongoose.model('House', houseSchema);
 
-const insertData = () => {
-	let allData = [];
-	while (allData.length < 100) {
-	  allData.push(data.makeData());
-	}
-	House.insertMany(allData, err => {
-	  if (err) {
-	    console.log(err);
-	  }
-	});
+
+// const insertData = () => {
+// 	let allData = [];
+// 	while (allData.length < 100) {
+// 	  allData.push(data.makeData());
+// 	}
+// 	House.insertMany(allData, err => {
+// 	  if (err) {
+// 	    console.log(err);
+// 	  }
+// 	});
+// }
+
+const insertData = (data) => {
+  House.insertMany(data, err => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('inserted data');
+    }
+  });
+}
+
+const readTSV = () => {
+  fs.readFile('./description.tsv', 'utf8', (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(data);
+      let allData = dataGen.insertTSV(data);
+      insertData(allData);
+    }
+  })
 }
 
 const findOne = id => House.findOne({ id });
 
-
-module.exports.insertData = insertData;
+module.exports.readTSV = readTSV;
 module.exports.findOne = findOne;
+
 
 
 
