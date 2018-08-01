@@ -1,7 +1,6 @@
 import React from 'react';
-// import { shallow, mount, render } from 'enzyme';
 import App from '../client/component/app.jsx';
-import Highlights from '../client/component/highlights.jsx';
+import Highlights from '../client/component/highlights/highlights.jsx';
 
 const prop = { 
   host: 'host',

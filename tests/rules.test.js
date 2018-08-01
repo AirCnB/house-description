@@ -1,5 +1,5 @@
 import React from 'react';
-import Rules from '../client/component/rules.jsx';
+import Rules from '../client/component/rules/rules.jsx';
 
 const props = {
   rules: ['one', 'two', 'three'],

@@ -1,6 +1,6 @@
 import React from 'react';
-import Amenities from '../client/component/amenities.jsx';
-import Popup from '../client/component/popup.jsx';
+import Amenities from '../client/component/amenities/amenities.jsx';
+import Popup from '../client/component/popup/popup.jsx';
 
 const props = {
   amenities: [

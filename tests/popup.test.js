@@ -1,5 +1,5 @@
 import React from 'react';
-import Popup from '../client/component/popup.jsx';
+import Popup from '../client/component/popup/popup.jsx';
 
 const props = {
   amenities_basics: ['one', 'two', 'three'],

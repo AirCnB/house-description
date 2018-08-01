@@ -1,5 +1,5 @@
 import React from 'react';
-import Cancellations from '../client/component/cancellations.jsx';
+import Cancellations from '../client/component/cancellations/cancellations.jsx';
 
 describe('Cancellations', () => {
   it('should render component properly', () => {

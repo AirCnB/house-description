@@ -1,6 +1,6 @@
 import React from 'react';
-import DescriptionTitle from '../client/component/description-title.jsx';
-import DescriptionBody from '../client/component/description-body.jsx';
+import DescriptionTitle from '../client/component/description/description-title.jsx';
+import DescriptionBody from '../client/component/description/description-body.jsx';
 
 const props = {
   description: 'description',
