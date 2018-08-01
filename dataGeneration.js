@@ -71,15 +71,9 @@ const makeData = () => {
 	  highlight3: faker.lorem.sentence(10),
 	  image: faker.image.avatar(),
 	  description: paragraph2,
-	// aHeaders: headers,
 	  amenities: modelAmenities,
 	  amenities_basics: basics,
     amenities_info: info,
-	// a_facilities: info[1],
-	// a_1: info[2],
-	// a_2: info[3],
-	// a_3: info[4],
-	// a_4: info[5],
 	  not_included: faker.lorem.words(5),
 	  rules: rules,
 	  rules2: paragraph1,
@@ -140,34 +134,8 @@ const makeTSV = () => {
   })
 }
 
-const makeDocument = (header, row) => {
-  let obj = {};
-  row = row.split('\t');
-  header = header.split('\t');
-  for (let i = 0; i < header.length; i++) {
-    if (row[i][0] === '[') {
-      obj[header[i]] = JSON.parse(row[i]);
-    } else if (parseInt(row[i]).toString() !== 'NaN') {
-      obj[header[i]] = parseInt(row[i]);
-    } else {
-      obj[header[i]] = row[i];
-    }
-  }
-  return obj;
-};
-
-const insertTSV = (data) => {
-  let allData = [];
-  data = data.split('\n');
-  let headers = data[0];
-  for (let i = 1; i < 100; i++) {
-    allData.push(makeDocument(headers, data[i]));
-  }
-  return allData;
-}
-
 module.exports.makeTSV = makeTSV;
-module.exports.insertTSV = insertTSV;
+
 
 
 

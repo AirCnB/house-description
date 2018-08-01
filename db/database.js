@@ -25,18 +25,12 @@ const houseSchema = mongoose.Schema({
   highlight3: String,
   image: String,
   description: String,
-  // aHeaders: [String],
   amenities: [{
   	A: String,
   	url: String
   }],
   amenities_basics: [],
   amenities_info: [[String]],
-  // a_facilities: [],
-  // a_1: [],
-  // a_2: [],
-  // a_3: [],
-  // a_4: [],
   not_included: [],
   rules: [],
   rules2: String,
@@ -45,47 +39,10 @@ const houseSchema = mongoose.Schema({
 
 const House = mongoose.model('House', houseSchema);
 
-
-// const insertData = () => {
-// 	let allData = [];
-// 	while (allData.length < 100) {
-// 	  allData.push(data.makeData());
-// 	}
-// 	House.insertMany(allData, err => {
-// 	  if (err) {
-// 	    console.log(err);
-// 	  }
-// 	});
-// }
-
-const insertData = (data) => {
-  House.insertMany(data, err => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log('inserted data');
-    }
-  });
-}
-
-const readTSV = () => {
-  fs.readFile('./description.tsv', 'utf8', (err, data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(data);
-      let allData = dataGen.insertTSV(data);
-      insertData(allData);
-    }
-  })
-}
-
 const findOne = id => House.findOne({ id });
 
-module.exports.readTSV = readTSV;
 module.exports.findOne = findOne;
-
-
+module.exports.House = House;
 
 
 

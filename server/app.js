@@ -1,13 +1,9 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const faker = require('faker');
-const data = require('../dataGeneration.js');
 const db = require('../db/database.js');
 
 app.use('/listings/:id', express.static('public'));
-
-// db.readTSV();
 
 app.get('/api/house/:id', (req, res) => {
   let data = req.params;

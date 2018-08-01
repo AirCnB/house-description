@@ -25,7 +25,8 @@
     "test": "jest --coverage --colors",
     "start": "nodemon app.js",
     "build": "webpack -d --watch",
-    "eslint": "eslint . --ext .jsx --ext .js"
+    "eslint": "eslint . --ext .jsx --ext .js",
+    "seed": "node seedData.js"
   },
   "repository": {
     "type": "git",

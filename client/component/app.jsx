@@ -42,7 +42,6 @@ class App extends React.Component {
     id = parseInt(id.substring(0, id.length))
     axios.get(`/api/house/${id}`)
       .then( ({ data }) => {
-        console.log('data in client', data);
         this.handleInfo(data);
       })
       .catch( error => {
