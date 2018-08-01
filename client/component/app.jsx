@@ -1,13 +1,12 @@
 import React from 'react';
 import axios from 'axios';
-import DescriptionTitle from './description-title.jsx';
-import Highlights from './highlights.jsx';
-import DescriptionBody from './description-body.jsx';
-import Amenities from './amenities.jsx';
-import SleepingArrangements from './sleeping-arrangements.jsx';
-import Rules from './rules.jsx';
-import Cancellations from './cancellations.jsx';
-
+import DescriptionTitle from './description/description-title.jsx';
+import Highlights from './highlights/highlights.jsx';
+import DescriptionBody from './description/description-body.jsx';
+import Amenities from './amenities/amenities.jsx';
+import SleepingArrangements from './sleeping-arrangement/sleeping-arrangements.jsx';
+import Rules from './rules/rules.jsx';
+import Cancellations from './cancellations/cancellations.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -60,7 +59,6 @@ class App extends React.Component {
     }
   }
 
-
   toggleDescription() {
     this.setState( ({ showDescription }) => ({
       showDescription: !showDescription
@@ -78,8 +76,6 @@ class App extends React.Component {
       showCancellation: !showCancellation
     }));
   }
-
-
 
   render() {
     const { info, modal, showRules, showDescription, showCancellation } = this.state;

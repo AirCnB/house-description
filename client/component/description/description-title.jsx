@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import styles from './description-title.css';
 
 const DescriptionTitle = (props) => (

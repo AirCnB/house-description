@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import styles from './highlights.css'
 
 class Highlights extends React.Component {

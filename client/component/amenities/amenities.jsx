@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Popup from './popup.jsx';
+import Popup from '../popup/popup.jsx';
 import styles from './amenities.css';
 
 const Amenities = (props) => (
