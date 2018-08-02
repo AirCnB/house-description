@@ -26,7 +26,7 @@
     "start": "nodemon app.js",
     "build": "webpack -d --watch",
     "eslint": "eslint . --ext .jsx --ext .js",
-    "seed": "node seedData.js"
+    "seed": "node ./data_generation/seedData.js"
   },
   "repository": {
     "type": "git",
@@ -72,6 +72,7 @@
     "faker": "^4.1.0",
     "mongoose": "^5.2.4",
     "mongoose-auto-increment": "^5.0.1",
+    "nodemon": "^1.18.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-test-renderer": "^16.4.1"

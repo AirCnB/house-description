@@ -1,4 +1,4 @@
-const db = require('./db/database.js');
+const db = require('../db/database.js');
 const fs = require('fs');
 
 
@@ -29,21 +29,20 @@ const insertTSV = (data) => {
 }
 
 const insertData = (data) => {
-  db.House.insertMany(data, err => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log('inserted data');
-    }
-  });
-}
+  db.House.insertMany(data)
+    .then( () => {
+      console.log('database seeded')
+      db.connection.close(() => {
+        console.log('database connection closed')
+      });
+    });
+};
 
 const readTSV = () => {
-  fs.readFile('./description.tsv', 'utf8', (err, data) => {
+  fs.readFile('./data_generation/description.tsv', 'utf8', (err, data) => {
     if (err) {
       console.log(err);
     } else {
-      console.log(data);
       let allData = insertTSV(data);
       insertData(allData);
     }

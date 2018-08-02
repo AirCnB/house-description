@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/aircnb');
-const dataGen = require('../dataGeneration.js');
-const db = mongoose.connection;
+const connection = mongoose.connection;
 const fs = require('fs');
 
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
+connection.on('error', console.error.bind(console, 'connection error:'));
+connection.once('open', () => {
   console.log('connected to database');
 });
 
@@ -43,11 +42,4 @@ const findOne = id => House.findOne({ id });
 
 module.exports.findOne = findOne;
 module.exports.House = House;
-
-
-
-
-
-
-
-
+module.exports.connection = connection;
