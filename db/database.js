@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/aircnb');
+mongoose.connect('mongodb://database/aircnb');
 const connection = mongoose.connection;
 const fs = require('fs');
 

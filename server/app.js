@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const db = require('../db/database.js');
 
-app.use('/listings/:id', express.static('public'));
+app.use('/listings/:id/description', express.static('public'));
 
 app.get('/api/house/:id', (req, res) => {
   let data = req.params;

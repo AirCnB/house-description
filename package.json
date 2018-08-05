@@ -26,7 +26,8 @@
     "start": "nodemon app.js",
     "build": "webpack -d --watch",
     "eslint": "eslint . --ext .jsx --ext .js",
-    "seed": "node ./data_generation/seedData.js"
+    "seed": "node ./data_generation/seedData.js",
+    "generate": "node dataGeneration.js"
   },
   "repository": {
     "type": "git",

@@ -86,7 +86,7 @@ class App extends React.Component {
         <DescriptionBody info={info} toggleDescription={this.toggleDescription} show={showDescription} />
         <Amenities info={info} togglePopup={this.togglePopup} modal={modal} />
         <SleepingArrangements info={info} />
-        <Rules info={info} toggleRules={this.toggleRules} showRules={this.state.showRules} />
+        <Rules info={info} toggleRules={this.toggleRules} showRules={showRules} />
         <Cancellations toggleCancellation={this.toggleCancellation} showCancellation={showCancellation} />
       </div>
   	);
