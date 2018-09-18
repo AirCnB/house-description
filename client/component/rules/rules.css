@@ -46,7 +46,7 @@
   padding-top: 15px;
 }
 
-.infoPanel {
+.hidden {
   width: 566px;
   margin-top: 10px;
   max-height: 0px;

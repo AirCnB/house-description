@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import DescriptionTitle from './description/description-title.jsx';
-import Highlights from './highlights/highlights.jsx';
+import HighlightList from './highlights/highlightList.jsx';
 import DescriptionBody from './description/description-body.jsx';
 import Amenities from './amenities/amenities.jsx';
 import SleepingArrangements from './sleeping-arrangement/sleeping-arrangements.jsx';
@@ -13,10 +13,10 @@ class App extends React.Component {
   	super(props);
     this.state = {
       info: {},
-      modal: false,
+      showModal: false,
       showDescription: false,
       showRules: false,
-      showCancellation: false
+      showCancellation: false,
     }
     this.grabData = this.grabData.bind(this);
     this.togglePopup = this.togglePopup.bind(this);
@@ -31,60 +31,46 @@ class App extends React.Component {
   }
 
   handleInfo(results) {
-    this.setState({
-      info: results
-    })
+    this.setState({ info: results });
   }
 
   grabData() {
     let id = window.location.pathname.slice(10);
     id = parseInt(id.substring(0, id.length))
     axios.get(`/api/house/${id}`)
-      .then( ({ data }) => {
-        this.handleInfo(data);
-      })
-      .catch( error => {
-        console.log(error);
-    })
+      .then( ({ data }) => { this.handleInfo(data) })
+      .catch( error => { console.error(error) })
   }
 
   togglePopup() {
-    this.setState( ({ modal }) => ({
-      modal: !modal
-    }));
-    if (this.state.modal === false) {
+    this.setState( ({ showModal }) => ({ showModal: !showModal }));
+    if (this.state.showModal === false) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'scroll';
-    }
+    };
   }
 
   toggleDescription() {
-    this.setState( ({ showDescription }) => ({
-      showDescription: !showDescription
-    }));
+    this.setState( ({ showDescription }) => ({ showDescription: !showDescription }));
   }
 
   toggleRules() {
-    this.setState( ({ showRules }) => ({
-      showRules: !showRules
-    }));
+    this.setState( ({ showRules }) => ({ showRules: !showRules }));
   }
 
   toggleCancellation() {
-    this.setState( ({ showCancellation }) => ({
-      showCancellation: !showCancellation
-    }));
+    this.setState( ({ showCancellation }) => ({ showCancellation: !showCancellation }));
   }
 
   render() {
-    const { info, modal, showRules, showDescription, showCancellation } = this.state;
+    const { info, showModal, showRules, showDescription, showCancellation } = this.state;
   	return (
       <div className='main-app'>
         <DescriptionTitle info={info} />
-        <Highlights info={info} />
-        <DescriptionBody info={info} toggleDescription={this.toggleDescription} show={showDescription} />
-        <Amenities info={info} togglePopup={this.togglePopup} modal={modal} />
+        <HighlightList info={info} />
+        <DescriptionBody info={info} toggleDescription={this.toggleDescription} showDescription={showDescription} />
+        <Amenities info={info} togglePopup={this.togglePopup} modal={showModal} />
         <SleepingArrangements info={info} />
         <Rules info={info} toggleRules={this.toggleRules} showRules={showRules} />
         <Cancellations toggleCancellation={this.toggleCancellation} showCancellation={showCancellation} />

@@ -1,21 +1,38 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './cancellations.css';
+import constants from './cancellation-constants.js';
 
-const Cancellations = (props) => (
-  <div className={styles.main}>
-    <div className={styles.title}>Cancellations</div>
-    <div className={styles.policy}>Strict policy – Free cancellation within 48 hours</div>
-    <div className={styles.refund}>Cancel within 48 hours of booking to get a full refund.</div>
-    <div id='cancellation' className={props.showCancellation ? styles.visible : styles.hidden}>
-      <ul>
-        <li className={styles.list}>Cancel up to 24 hours before check-in to get a refund, minus Airbnb service fees.</li>
-        <li className={styles.list}>Cancel within 24 hours of check-in and the first night is non-refundable.</li>
-        <li className={styles.list}>Airbnb service fees are refunded only if the reservation is cancelled within 48 hours of booking and the guest has not checked-in yet.</li>
-      </ul>
-      <div className={styles.getDetails}>Get details</div>
+const Cancellations = ( { showCancellation, toggleCancellation }) => {
+  const { main, title, policy, refund, list, getDetails, readMore, visible, hidden } = styles;
+  const { policyDescription, refundDescription, listOne, listTwo, listThree } = constants;
+
+  return (
+    <div className={main}>
+      <div className={title}>Cancellations</div>
+      <div className={policy}>{policyDescription}</div>
+      <div className={refund}>{refundDescription}</div>
+      <div id='cancellation' className={showCancellation ? visible : hidden}>
+        <ul>
+          <li className={list}>{listOne}</li>
+          <li className={list}>{listTwo}</li>
+          <li className={list}>{listThree}</li>
+        </ul>
+        <div className={getDetails}>Get details</div>
+      </div>
+      <div className={readMore} onClick={toggleCancellation}>{showCancellation? 'Hide policies' : 'Read more about the policy'} &#8964;</div>
     </div>
-    <div className={styles.readMore} onClick={props.toggleCancellation}>{props.showCancellation? 'Hide policies' : 'Read more about the policy'} &#8964;</div>
-  </div>
-);
+  )
+};
+
+Cancellations.defaultProps = {
+  toggleCancellation: () => {},
+  showCancellation: false,
+};
+
+Cancellations.propTypes = {
+  toggleCancellation: PropTypes.func.isRequired,
+  showCancellation: PropTypes.bool.isRequired,
+};
 
 export default Cancellations;

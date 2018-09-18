@@ -1,33 +1,54 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './popup.css';
 
-const Popup = (props) => (  
-  <div className={styles.main}>
-    <div className={styles.modal}>
-      <button type='button' className={styles.close} onClick={props.togglePopup}>X</button>
-      <div>
-        <h1 className={styles.title}>Amenities</h1>
-        <div className={styles.header}>Basic</div>
-        {props.info.amenities_basics.map( item => <div className={styles.detail}>{item}</div>)}
+const Popup = ({ info: {amenities_basics, amenities_info, not_included}, togglePopup, }) => {  
+  const { main, modal, close, title, header, detail, dashed, backdrop } = styles;
+
+  return (
+    <div className={main}>
+      <div className={modal}>
+        <button type='button' className={close} onClick={togglePopup}>X</button>
+        <div>
+          <h1 className={title}>Amenities</h1>
+          <div className={header}>Basic</div>
+          {amenities_basics.map( (item, index) => <div className={detail} key={index}>{item}</div>)}
+        </div>
+        <div>
+          {amenities_info.map( section => {
+            return section.map( (info, index) => {
+              if (index === 0) {
+                return <div className={header} key={index}>{info}</div>
+              } else {
+                return <div className={detail} key={index}>{info}</div>
+              }
+            }) 
+          })}
+        </div>
+        <div>
+          <div className={header}>Not included</div>
+          {not_included[0].split(' ').map( (detail, index) => <div className={dashed} key={index}>{detail}</div>)}
+        </div>
       </div>
-      <div>
-      {props.info.amenities_info.map( section => {
-        return section.map( (detail, index) => {
-          if (index === 0) {
-          	return <div className={styles.header}>{detail}</div>
-          } else {
-          	return <div className={styles.detail}>{detail}</div>
-          }
-        }) 
-      })}
-      </div>
-      <div>
-        <div className={styles.header}>Not included</div>
-        {props.info.not_included[0].split(' ').map( detail => <div className={styles.dashed}>{detail}</div>)}
-      </div>
+      <div className={backdrop} onClick={togglePopup}/>
     </div>
-    <div className={styles.backdrop} onClick={props.togglePopup}/>
-  </div>
-);
+  )
+};
+
+Popup.defaultProps = {
+  info: {},
+  amenities_basics: [],
+  amenities_info: [],
+  not_included: [],
+  togglePopup: () => {},
+};
+
+Popup.propTypes = {
+  info: PropTypes.object.isRequired,
+  amenities_basics: PropTypes.array.isRequired,
+  amenities_info: PropTypes.array.isRequired,
+  not_included: PropTypes.array.isRequired,
+  togglePopup: PropTypes.func.isRequired,
+};
   
 export default Popup;

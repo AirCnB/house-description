@@ -27,7 +27,7 @@
     "build": "webpack -d --watch",
     "eslint": "eslint . --ext .jsx --ext .js",
     "seed": "node ./data_generation/seedData.js",
-    "generate": "node dataGeneration.js"
+    "generate": "node ./data_generation/dataGeneration.js"
   },
   "repository": {
     "type": "git",
@@ -74,6 +74,7 @@
     "mongoose": "^5.2.4",
     "mongoose-auto-increment": "^5.0.1",
     "nodemon": "^1.18.3",
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-test-renderer": "^16.4.1"

@@ -25,9 +25,10 @@
   border-bottom: thin solid #DBDBDB;
 }
 
-.infoPanel {
+.hidden {
   width: 566px;
   margin-top: 10px;
+  margin-bottom: 15px;
   max-height: 0px;
   overflow: hidden;
   opacity: 0.0;
@@ -35,11 +36,7 @@
 }
 
 .visible{
-  width: 566px;
-  margin-top: 10px;
-  max-height: 0px;
-  overflow: hidden;
+  composes: hidden;
   max-height: 1000px;
   opacity: 1.0;
-  transition: max-height 1.5s ease, opacity 0.5s ease;
 }

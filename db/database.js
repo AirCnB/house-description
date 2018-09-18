@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://database/aircnb');
+mongoose.connect('mongodb://localhost/aircnb');
 const connection = mongoose.connection;
 const fs = require('fs');
 
@@ -14,14 +14,18 @@ const houseSchema = mongoose.Schema({
   home_name: String,
   city: String,
   host: String,
-  guest_num: Number,
-  bedroom_num: Number,
-  bed_num: Number,
-  bath_num: Number,
+  titleIcons: [{
+    label: Number,
+    image: String,
+    description: String
+  }],
   license: Number,
-  highlight1: String,
-  highlight2: String,
-  highlight3: String,
+  highlights: [{
+    highlightTitle: String,
+    isSuperhost: Number,
+    description: String,
+    highlightImage: String
+  }],
   image: String,
   description: String,
   amenities: [{

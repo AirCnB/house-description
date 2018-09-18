@@ -1,6 +1,27 @@
 const faker = require('faker');
 const fs = require('fs');
 
+const highlights = [
+  {
+    highlightTitle: 'is a Superhost',
+    isSuperhost: 1,
+    description: 'Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.',
+    highlightImage: 'https://s3-us-west-1.amazonaws.com/front-end-capstone/if_37_1710847.svg'
+  },
+  {
+    highlightTitle: 'Great check-in experience',
+    isSuperhost: 0,
+    description: 'All recent guests gave this home’s check-in process a 5-star rating.',
+    highlightImage: 'https://s3-us-west-1.amazonaws.com/front-end-capstone/if_37_1710847.svg'
+  },
+  {
+    highlightTitle: 'Sparkling clean',
+    isSuperhost: 0,
+    description: 'Recent guests have said that this home was sparkling clean.',
+    highlightImage: 'https://s3-us-west-1.amazonaws.com/front-end-capstone/if_37_1710847.svg'
+  }
+];
+
 const amenities = [{A: 'TV', url: 'https://s3-us-west-1.amazonaws.com/front-end-capstone/TV+icon.jpeg'}, 
                    {A: 'Dryer', url: 'https://s3-us-west-1.amazonaws.com/front-end-capstone/dryer+icon.png'},
                    {A: 'Fireplace', url: 'https://s3-us-west-1.amazonaws.com/front-end-capstone/fireplace+icon.png'},
@@ -25,6 +46,29 @@ const makeData = (id) => {
   let modelAmenities = [];
   let rules = [];
   let sleep = [];
+  let sampleHighlights = [];
+  let icons = [
+    {
+      label: faker.random.number({min:1, max:8}),
+      image: 'https://s3-us-west-1.amazonaws.com/front-end-capstone/multiple-users-silhouette.png',
+      description: 'guest',
+    },
+    {
+      label: faker.random.number({min:1, max:8}),
+      image: 'https://s3-us-west-1.amazonaws.com/front-end-capstone/door.png',
+      description: 'bedrooms',
+    },
+    {
+      label: faker.random.number({min:1, max:8}),
+      image: 'https://s3-us-west-1.amazonaws.com/front-end-capstone/double-king-size-bed.png',
+      description: 'beds',
+    },
+    {
+      label: faker.random.number({min:1, max:8}),
+      image: 'https://s3-us-west-1.amazonaws.com/front-end-capstone/bathtub-with-opened-shower.png',
+      description: 'baths',
+    }
+  ];
 
   while (basics.length < 5) {
     basics.push(faker.lorem.sentence(5));
@@ -45,6 +89,10 @@ const makeData = (id) => {
   	rules.push(faker.lorem.sentence(3));
   }
 
+  for (let i = 0; i < highlights.length; i++) {
+    sampleHighlights.push(highlights[i]);
+  }
+
   while (modelAmenities.length < 5) {
   	modelAmenities.push(amenities[Math.floor(Math.random() * 7)])
   }
@@ -61,14 +109,9 @@ const makeData = (id) => {
 	  home_name: homeName,
 	  city: faker.address.city(),
 	  host: faker.name.firstName(),
-	  guest_num: faker.random.number({min:1, max:8}),
-	  bedroom_num: faker.random.number({min:1, max:3}),
-	  bed_num: faker.random.number({min:1, max:3}),
-	  bath_num: faker.random.number({min:1, max:3}),
-	  license: faker.random.number({min:1000000, max:9000000}),
-	  highlight1: faker.lorem.sentence(10),
-	  highlight2: faker.lorem.sentence(10),
-	  highlight3: faker.lorem.sentence(10),
+	  titleIcons: icons,
+    license: faker.random.number({min:1000000, max:9000000}),
+    highlights: sampleHighlights,
 	  image: faker.image.avatar(),
 	  description: paragraph2,
 	  amenities: modelAmenities,

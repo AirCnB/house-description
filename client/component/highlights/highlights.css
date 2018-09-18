@@ -6,6 +6,7 @@
   border: 1px solid #DBDBDB;
   border-radius: 4px;
   padding: 24px;
+  margin-bottom: 24px;
   width: 570px;
   color: #484848;
 }
@@ -21,7 +22,7 @@
   margin-bottom: 8px;
 }
 
-.description {
+.titleDescription {
   font-weight: 200;
 }
 
