@@ -9,10 +9,28 @@ const props = {
   image: 'https://s3-us-west-1.amazonaws.com/front-end-capstone/door.png',
   city: 'city',
   host: 'host',
-  guest_num: 0,
-  bedroom_num: 0,
-  bed_num: 0,
-  bath_num: 0,
+  titleIcons: [
+    {
+      label: 5,
+      image: 'https://s3-us-west-1.amazonaws.com/front-end-capstone/multiple-users-silhouette.png',
+      description: 'guest',
+    },
+    {
+      label: 5,
+      image: 'https://s3-us-west-1.amazonaws.com/front-end-capstone/door.png',
+      description: 'bedrooms',
+    },
+    {
+      label: 5,
+      image: 'https://s3-us-west-1.amazonaws.com/front-end-capstone/double-king-size-bed.png',
+      description: 'beds',
+    },
+    {
+      label: 5,
+      image: 'https://s3-us-west-1.amazonaws.com/front-end-capstone/bathtub-with-opened-shower.png',
+      description: 'baths',
+    }
+  ],
 }
 
 const MockFn = jest.fn();
@@ -33,20 +51,20 @@ describe('DescriptionBody', () => {
     wrapper1.find('.showMore').simulate('click');
     expect(MockFn).toHaveBeenCalled();
   });
-  it('should have visible class when props.show is true', () => {
-    const temp = shallow(<DescriptionBody info={props} show={true} />);
+  it('should have visible class when props.showDescription is true', () => {
+    const temp = shallow(<DescriptionBody info={props} showDescription={true} />);
     expect(temp.find('#description').hasClass('visible')).toEqual(true);
   });
-  it('should have infoPanel class when props.show is false', () => {
-    const temp = shallow(<DescriptionBody info={props} show={false} />);
-    expect(temp.find('#description').hasClass('infoPanel')).toEqual(true);
+  it('should have hidden class when props.showDescription is false', () => {
+    const temp = shallow(<DescriptionBody info={props} showDescription={false} />);
+    expect(temp.find('#description').hasClass('hidden')).toEqual(true);
   })
-  it('should have proper text when props.show is false', () => {
-  	const temp = shallow(<DescriptionBody info={props} show={false} />);
+  it('should have proper text when props.showDescription is false', () => {
+  	const temp = shallow(<DescriptionBody info={props} showDescription={false} />);
   	expect(temp.find('.showMore').text()).toEqual('Read more about the space ⌄');
   });
-  it('should have proper text when props.show is false', () => {
-  	const temp = shallow(<DescriptionBody info={props} show={true} />);
+  it('should have proper text when props.showDescription is false', () => {
+  	const temp = shallow(<DescriptionBody info={props} showDescription={true} />);
   	expect(temp.find('.showMore').text()).toEqual('Hide ⌄');
   });
 });

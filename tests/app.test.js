@@ -15,10 +15,10 @@ describe('<App />', () => {
 })
 
 describe('App states', () => {
-  it('properly sets modal state', () => {
-  	expect(wrapper.state().modal).toEqual(false);
+  it('properly sets showModal state', () => {
+  	expect(wrapper.state().showModal).toEqual(false);
     instance.togglePopup();
-    expect(wrapper.state().modal).toEqual(true);
+    expect(wrapper.state().showModal).toEqual(true);
   });
   it('properly sets showDescription state', () => {
   	expect(wrapper.state().showDescription).toEqual(false);

@@ -22,10 +22,10 @@ describe('Rules', () => {
     const div = shallowWrapper.find('#rules');
     expect(div.hasClass('visible')).toEqual(true);
   });
-  it('should have class infoPanel when showRules is false', () => {
+  it('should have class hidden when showRules is false', () => {
     const shallowWrapper = shallow(<Rules info={props} showRules={false} />);
     const div = shallowWrapper.find('#rules');
-    expect(div.hasClass('infoPanel')).toEqual(true);
+    expect(div.hasClass('hidden')).toEqual(true);
   });
   it('should render proper amount of rules', () => {
     const div = wrapper.find('.rule');

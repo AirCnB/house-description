@@ -27,12 +27,12 @@ describe('Amenities', () => {
     wrapper.find('.showAll').simulate('click');
     expect(mockFn).toHaveBeenCalled();
   });
-  it('should render Popup modal when props.modal is true', () => {
-    const shallowWrapper = shallow(<Amenities info={props} togglePopup={mockFn} modal={true} />);
+  it('should render Popup modal when props.showModal is true', () => {
+    const shallowWrapper = shallow(<Amenities info={props} togglePopup={mockFn} showModal={true} />);
     expect(shallowWrapper.find(Popup)).toHaveLength(1);
   });
-  it('should not render Popup modal when props.modal is false', () => {
-    const shallowWrapper = shallow(<Amenities info={props} togglePopup={mockFn} modal={false} />);
+  it('should not render Popup modal when props.showModal is false', () => {
+    const shallowWrapper = shallow(<Amenities info={props} togglePopup={mockFn} showModal={false} />);
     expect(wrapper.find(Popup)).toHaveLength(0);
   });
 });

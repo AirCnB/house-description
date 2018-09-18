@@ -5,26 +5,41 @@ exports[`<App /> renders main App 1`] = `
   className="main-app"
 >
   <DescriptionTitle
+    city=""
+    home_name=""
+    host=""
+    house_type=""
+    images=""
     info={Object {}}
+    titleIcons={Array []}
   />
-  <Highlights
+  <HighlightList
+    highlights={Array []}
+    host=""
     info={Object {}}
   />
   <DescriptionBody
+    description=""
     info={Object {}}
-    show={false}
+    showDescription={false}
     toggleDescription={[Function]}
   />
   <Amenities
+    amenities={Array []}
     info={Object {}}
     modal={false}
+    showModal={false}
     togglePopup={[Function]}
   />
   <SleepingArrangements
     info={Object {}}
+    sleep_arrangement={Array []}
+    titleIcon={Array []}
   />
   <Rules
     info={Object {}}
+    rules={Array []}
+    rules2=""
     showRules={false}
     toggleRules={[Function]}
   />
