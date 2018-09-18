@@ -70,7 +70,7 @@ class App extends React.Component {
         <DescriptionTitle info={info} />
         <HighlightList info={info} />
         <DescriptionBody info={info} toggleDescription={this.toggleDescription} showDescription={showDescription} />
-        <Amenities info={info} togglePopup={this.togglePopup} modal={showModal} />
+        <Amenities info={info} togglePopup={this.togglePopup} showModal={showModal} />
         <SleepingArrangements info={info} />
         <Rules info={info} toggleRules={this.toggleRules} showRules={showRules} />
         <Cancellations toggleCancellation={this.toggleCancellation} showCancellation={showCancellation} />

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Popup from '../popup/popup.jsx';
 import styles from './amenities.css';
 
-const Amenities = ({ info, info: { amenities }, togglePopup, modal }) => {
+const Amenities = ({ info, info: { amenities }, togglePopup, showModal }) => {
 	const { main, title, wrapper, icon, image, showAll } = styles;
 
 	return (
@@ -17,7 +17,7 @@ const Amenities = ({ info, info: { amenities }, togglePopup, modal }) => {
   		</div>)}
   	</div>
   	<div className={showAll} onClick={togglePopup}>Show all 15 amenities</div>
-  	{modal && <Popup info={info} togglePopup={togglePopup}/>}
+  	{showModal && <Popup info={info} togglePopup={togglePopup}/>}
   </div>
 	)
 };
