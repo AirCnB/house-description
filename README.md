@@ -1,5 +1,10 @@
 # House-Description
-> House description module for AirCnB website
+
+![screenshot](house-description/assets/FEC Module.png)
+
+> This module allows users to view the information of a property site
+
+Demo component @ http://ec2-18-217-43-240.us-east-2.compute.amazonaws.com/listings/0/description/
 
 ## Related Projects
   * https://github.com/AirCnB/reviews-module
