@@ -1,6 +1,6 @@
 # House-Description
 
-![screenshot](house-description/assets/FEC Module.png)
+![screenshot](house-description/assets/screenshot.png)
 
 > This module allows users to view the information of a property site
 
